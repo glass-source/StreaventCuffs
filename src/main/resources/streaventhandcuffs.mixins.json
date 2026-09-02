@@ -1,0 +1,18 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.chachamaru.me.streaventhandcuffs.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "streaventhandcuffs.refmap.json",
+  "mixins": [
+  ],
+  "client": [
+    "ItemInHandLayerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}
