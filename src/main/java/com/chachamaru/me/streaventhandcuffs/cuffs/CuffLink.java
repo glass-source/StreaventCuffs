@@ -122,10 +122,24 @@ public final class CuffLink {
 
     public static void releasePlayers(ServerPlayer player) {
         if (!isPlayerCuffed(player)) return;
-        removeCuffs(player);
+
         ServerPlayer partner = getPartner(player);
+        removeCuffs(player);
+
         if (partner != null) {
             removeCuffs(partner);
+        }
+    }
+
+    public static void validateLink(ServerPlayer player) {
+        if (!isPlayerCuffed(player)) return;
+
+        ServerPlayer partner = getPartner(player);
+
+        if (partner == null
+                || !isPlayerCuffed(partner)
+                || !player.getUUID().equals(getPartnerUUID(partner))) {
+            removeCuffs(player);
         }
     }
 

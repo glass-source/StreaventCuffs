@@ -48,6 +48,7 @@ public class HandCuffsItemRenderer extends BlockEntityWithoutLevelRenderer {
         }
 
         poseStack.pushPose();
+        poseStack.translate(0.5F, 0.5F, 0.5F);
 
         // Entity models are authored Y-down; vanilla's BEWLR does exactly this for the trident.
         poseStack.scale(1.0F, -1.0F, -1.0F);
