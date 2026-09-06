@@ -28,6 +28,7 @@ public final class CuffEvents {
     public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
         if (event.phase != TickEvent.Phase.END) return;
         if (!(event.player instanceof ServerPlayer player)) return;
+        if (!isCuffed(player)) return;
 
         CuffLink.enforceOffHand(player);
         CuffLink.validateLink(player);
